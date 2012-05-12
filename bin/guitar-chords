@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require_relative "../lib/guitar-chords"
+
+begin
+  Guitar::Chords::Application.new(ARGV).run
+rescue OptionParser::InvalidOption => err
+  abort "guitar-chords: #{err.message}\nusage: guitar-chords [-c] [chord]"
+end
